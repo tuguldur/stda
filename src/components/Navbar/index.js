@@ -39,14 +39,64 @@ function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <span className={classes.grow}>Програм Хангамж</span>
-          {/* Button 1 */}
-          <Tooltip title="Add" placement="bottom">
+          {/* Танилцуулга */}
+          <Tooltip title="Танилцуулга" placement="bottom">
             <IconButton
               className={classes.button}
               aria-label="Delete"
               color="inherit"
             >
-              <MenuIcon />
+              <i className="material-icons">info</i>
+            </IconButton>
+          </Tooltip>
+          {/* Салбар */}
+          <Tooltip title="Салбар" placement="bottom">
+            <IconButton
+              className={classes.button}
+              aria-label="Delete"
+              color="inherit"
+            >
+              <i className="material-icons">domain</i>
+            </IconButton>
+          </Tooltip>
+          {/* Сургалт */}
+          <Tooltip title="Сургалт" placement="bottom">
+            <IconButton
+              className={classes.button}
+              aria-label="Delete"
+              color="inherit"
+            >
+              <i className="material-icons">school</i>
+            </IconButton>
+          </Tooltip>
+          {/* Элсэлт */}
+          <Tooltip title="Элсэлт" placement="bottom">
+            <IconButton
+              className={classes.button}
+              aria-label="Delete"
+              color="inherit"
+            >
+              <i className="material-icons">group_add</i>
+            </IconButton>
+          </Tooltip>
+          {/* Сургалт */}
+          <Tooltip title="Сургалт" placement="bottom">
+            <IconButton
+              className={classes.button}
+              aria-label="Delete"
+              color="inherit"
+            >
+              <i className="material-icons">school</i>
+            </IconButton>
+          </Tooltip>
+          {/* Сургалт */}
+          <Tooltip title="Сургалт" placement="bottom">
+            <IconButton
+              className={classes.button}
+              aria-label="Delete"
+              color="inherit"
+            >
+              <i className="material-icons">school</i>
             </IconButton>
           </Tooltip>
         </Toolbar>
