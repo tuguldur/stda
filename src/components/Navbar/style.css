@@ -3,3 +3,18 @@
   background-color: #202124;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
 }
+@media (max-width: 521px) {
+  .nav--link {
+    display: none;
+  }
+  .nav--button {
+    margin-left: auto;
+    display: flex;
+  }
+  #drawer {
+    margin-right: 0;
+  }
+}
+.nav--link {
+  flex-grow: 1;
+}

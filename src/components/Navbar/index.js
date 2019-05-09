@@ -63,90 +63,99 @@ class Navbar extends React.Component {
         <AppBar position="fixed">
           <Toolbar className="dev-nav">
             <IconButton
+              id="drawer"
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
             >
               <MenuIcon />
             </IconButton>
-            <div className={classes.root}>
+            <div className="nav--link">
               <a href="/" className={classes.link}>
                 <span className={classes.grow}>Програм Хангамж</span>
               </a>
             </div>
-            {/* Танилцуулга */}
-            <Tooltip title="Танилцуулга" placement="bottom">
-              <IconButton
-                className={classes.button}
-                aria-owns={info ? "simple-menu" : undefined}
-                aria-haspopup="true"
-                color="inherit"
-                onClick={event => this.setState({ info: event.currentTarget })}
-              >
-                <i className="material-icons">info</i>
-              </IconButton>
-            </Tooltip>
-            {/* Салбар */}
-            <Tooltip title="Салбар" placement="bottom">
-              <IconButton
-                aria-owns={more ? "simple-menu" : undefined}
-                aria-haspopup="true"
-                color="inherit"
-                onClick={event =>
-                  this.setState({ domain: event.currentTarget })
-                }
-              >
-                <i className="material-icons">domain</i>
-              </IconButton>
-            </Tooltip>
-            {/* Сургалт */}
-            <Tooltip title="Сургалт" placement="bottom">
-              <IconButton
-                aria-owns={more ? "simple-menu" : undefined}
-                aria-haspopup="true"
-                color="inherit"
-                onClick={event =>
-                  this.setState({ school: event.currentTarget })
-                }
-              >
-                <i className="material-icons">school</i>
-              </IconButton>
-            </Tooltip>
-            {/* Оюутан */}
-            <Tooltip title="Оюутан" placement="bottom">
-              <IconButton
-                aria-owns={more ? "simple-menu" : undefined}
-                aria-haspopup="true"
-                color="inherit"
-                onClick={event => this.setState({ group: event.currentTarget })}
-              >
-                <i className="material-icons">group</i>
-              </IconButton>
-            </Tooltip>
-            {/* Эрдэм шинжилгээ */}
-            <Tooltip title="Эрдэм шинжилгээ" placement="bottom">
-              <IconButton
-                aria-owns={more ? "simple-menu" : undefined}
-                aria-haspopup="true"
-                color="inherit"
-                onClick={event =>
-                  this.setState({ local_library: event.currentTarget })
-                }
-              >
-                <i className="material-icons">local_library</i>
-              </IconButton>
-            </Tooltip>
-            {/* MORE */}
-            <Tooltip title="Бусад" placement="bottom">
-              <IconButton
-                aria-owns={more ? "simple-menu" : undefined}
-                aria-haspopup="true"
-                color="inherit"
-                onClick={event => this.setState({ more: event.currentTarget })}
-              >
-                <i className="material-icons">more_vert</i>
-              </IconButton>
-            </Tooltip>
+            <div className="nav--button">
+              {/* Танилцуулга */}
+              <Tooltip title="Танилцуулга" placement="bottom">
+                <IconButton
+                  className={classes.button}
+                  aria-owns={info ? "simple-menu" : undefined}
+                  aria-haspopup="true"
+                  color="inherit"
+                  onClick={event =>
+                    this.setState({ info: event.currentTarget })
+                  }
+                >
+                  <i className="material-icons">info</i>
+                </IconButton>
+              </Tooltip>
+              {/* Салбар */}
+              <Tooltip title="Салбар" placement="bottom">
+                <IconButton
+                  aria-owns={more ? "simple-menu" : undefined}
+                  aria-haspopup="true"
+                  color="inherit"
+                  onClick={event =>
+                    this.setState({ domain: event.currentTarget })
+                  }
+                >
+                  <i className="material-icons">domain</i>
+                </IconButton>
+              </Tooltip>
+              {/* Сургалт */}
+              <Tooltip title="Сургалт" placement="bottom">
+                <IconButton
+                  aria-owns={more ? "simple-menu" : undefined}
+                  aria-haspopup="true"
+                  color="inherit"
+                  onClick={event =>
+                    this.setState({ school: event.currentTarget })
+                  }
+                >
+                  <i className="material-icons">school</i>
+                </IconButton>
+              </Tooltip>
+              {/* Оюутан */}
+              <Tooltip title="Оюутан" placement="bottom">
+                <IconButton
+                  aria-owns={more ? "simple-menu" : undefined}
+                  aria-haspopup="true"
+                  color="inherit"
+                  onClick={event =>
+                    this.setState({ group: event.currentTarget })
+                  }
+                >
+                  <i className="material-icons">group</i>
+                </IconButton>
+              </Tooltip>
+              {/* Эрдэм шинжилгээ */}
+              <Tooltip title="Эрдэм шинжилгээ" placement="bottom">
+                <IconButton
+                  aria-owns={more ? "simple-menu" : undefined}
+                  aria-haspopup="true"
+                  color="inherit"
+                  onClick={event =>
+                    this.setState({ local_library: event.currentTarget })
+                  }
+                >
+                  <i className="material-icons">local_library</i>
+                </IconButton>
+              </Tooltip>
+              {/* MORE */}
+              <Tooltip title="Бусад" placement="bottom">
+                <IconButton
+                  aria-owns={more ? "simple-menu" : undefined}
+                  aria-haspopup="true"
+                  color="inherit"
+                  onClick={event =>
+                    this.setState({ more: event.currentTarget })
+                  }
+                >
+                  <i className="material-icons">more_vert</i>
+                </IconButton>
+              </Tooltip>
+            </div>
             {/* MENU */}
             <Menu
               anchorEl={info}
@@ -155,48 +164,62 @@ class Navbar extends React.Component {
             >
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=8")
+                }
               >
-                {" "}
+                Захирлын мэндчилгээ
               </MenuItem>
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=10")
+                }
               >
-                {" "}
-              </MenuItem>{" "}
+                Түүхэн замнал
+              </MenuItem>
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=16")
+                }
               >
-                {" "}
-              </MenuItem>{" "}
+                Бүтэц
+              </MenuItem>
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=12")
+                }
               >
-                {" "}
-              </MenuItem>{" "}
+                Захирлын зөвлөл
+              </MenuItem>
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=14")
+                }
               >
-                {" "}
-              </MenuItem>{" "}
+                Багш хөгжлийн төв
+              </MenuItem>
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=2196")
+                }
               >
-                {" "}
-              </MenuItem>{" "}
+                Ёс зүйн зөвлөл
+              </MenuItem>
               <MenuItem
                 className={classes.moreLink}
-                onClick={() => (window.location.href = "")}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=18")
+                }
               >
-                {" "}
+                Санхүү үйлчилгээний алба
               </MenuItem>
             </Menu>
-
             <Menu
               anchorEl={domain}
               open={Boolean(domain)}
@@ -320,7 +343,6 @@ class Navbar extends React.Component {
                 Төгсөлт
               </MenuItem>
             </Menu>
-
             <Menu
               anchorEl={group}
               open={Boolean(group)}
