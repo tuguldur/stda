@@ -11,6 +11,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+
+import Drawer from "@material-ui/core/Drawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 import "./style.css";
 const styles = {
   root: {
@@ -34,6 +39,12 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 12
+  },
+  list: {
+    width: 250
+  },
+  drawerlink: {
+    fontSize: "14px"
   }
 };
 class Navbar extends React.Component {
@@ -43,7 +54,8 @@ class Navbar extends React.Component {
     domain: null,
     school: null,
     group: null,
-    local_library: null
+    local_library: null,
+    drawer: false
   };
   handleClose = () => {
     this.setState({
@@ -55,9 +67,55 @@ class Navbar extends React.Component {
       local_library: null
     });
   };
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open
+    });
+  };
   render() {
     const { classes } = this.props;
     const { more, info, domain, school, group, local_library } = this.state;
+    const sideLink = [
+      {
+        text: "Элсэлтийн вэб",
+        link: "http://203.217.139.22/darkhan/loginesh.aspx"
+      },
+      { text: "Багшийн веб", link: "http://unimis.stda.edu.mn/teacher/" },
+      { text: "Оюутны веб", link: "http://unimis.stda.edu.mn/student/" },
+      { text: "Өөрийн үнэлгээний вэб", link: "http://sas.stda.edu.mn/" },
+      { text: "Аттестатчиллын вэб", link: "http://unimis.stda.edu.mn/attest/" },
+      {
+        text: "Төгсөгчдийн мэдээлэл шүүх",
+        link: "http://unimis.stda.edu.mn/search/"
+      },
+      { text: "Номын сангийн веб", link: "http://stda.edu.mn/library" },
+      { text: "Moodle систем", link: "http://stda.edu.mn/moodle" },
+      { text: "Дотоод файл сервэр", link: "http://192.168.10.105/owncloud" },
+      { text: "Дотоод зааварчилгаа", link: "http://stda.edu.mn/guide/" },
+      { text: "ШУТИС төв сайт", link: "http://must.edu.mn" },
+      {
+        text: "Эрдэм шинжилгээний веб",
+        link: "http://www.unimis.edu.mn/buteel/"
+      },
+      { text: "ШУТ төв номын сан", link: "http://www.must-library.edu.mn/" },
+      { text: "Оюутны холбоо", link: "http://oyutan.must.edu.mn/" }
+    ];
+
+    const sideList = (
+      <div className={classes.list}>
+        <List>
+          {sideLink.map((data, index) => (
+            <ListItem
+              button
+              key={index}
+              onClick={() => (window.location.href = data.link)}
+            >
+              <ListItemText primary={data.text} className="drawer--link" />
+            </ListItem>
+          ))}
+        </List>
+      </div>
+    );
     return (
       <div className={classes.root}>
         <AppBar position="fixed">
@@ -67,6 +125,7 @@ class Navbar extends React.Component {
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
+              onClick={this.toggleDrawer("drawer", true)}
             >
               <MenuIcon />
             </IconButton>
@@ -527,6 +586,20 @@ class Navbar extends React.Component {
             </Menu>
           </Toolbar>
         </AppBar>
+
+        <Drawer
+          open={this.state.drawer}
+          onClose={this.toggleDrawer("drawer", false)}
+        >
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer("drawer", false)}
+            onKeyDown={this.toggleDrawer("drawer", false)}
+          >
+            {sideList}
+          </div>
+        </Drawer>
       </div>
     );
   }
