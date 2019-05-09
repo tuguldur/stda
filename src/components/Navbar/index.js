@@ -8,6 +8,9 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 //import Icon from "@material-ui/core/Icon";
 import MenuIcon from "@material-ui/icons/Menu";
+
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import "./style.css";
 const styles = {
   root: {
@@ -19,90 +22,492 @@ const styles = {
     textTransform: "uppercase",
     fontFamily: "Roboto Mono"
   },
+  link: {
+    color: "#fff",
+    textDecoration: "none"
+  },
+  moreLink: {
+    padding: "0 24px",
+    height: "32px",
+    fontSize: "14px"
+  },
   menuButton: {
     marginLeft: -12,
     marginRight: 12
   }
 };
+class Navbar extends React.Component {
+  state = {
+    more: null,
+    info: null,
+    domain: null,
+    school: null,
+    group: null,
+    local_library: null
+  };
+  handleClose = () => {
+    this.setState({
+      more: null,
+      info: null,
+      domain: null,
+      school: null,
+      group: null,
+      local_library: null
+    });
+  };
+  render() {
+    const { classes } = this.props;
+    const { more, info, domain, school, group, local_library } = this.state;
+    return (
+      <div className={classes.root}>
+        <AppBar position="fixed">
+          <Toolbar className="dev-nav">
+            <IconButton
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <div className={classes.root}>
+              <a href="/" className={classes.link}>
+                <span className={classes.grow}>Програм Хангамж</span>
+              </a>
+            </div>
+            {/* Танилцуулга */}
+            <Tooltip title="Танилцуулга" placement="bottom">
+              <IconButton
+                className={classes.button}
+                aria-owns={info ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                color="inherit"
+                onClick={event => this.setState({ info: event.currentTarget })}
+              >
+                <i className="material-icons">info</i>
+              </IconButton>
+            </Tooltip>
+            {/* Салбар */}
+            <Tooltip title="Салбар" placement="bottom">
+              <IconButton
+                aria-owns={more ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                color="inherit"
+                onClick={event =>
+                  this.setState({ domain: event.currentTarget })
+                }
+              >
+                <i className="material-icons">domain</i>
+              </IconButton>
+            </Tooltip>
+            {/* Сургалт */}
+            <Tooltip title="Сургалт" placement="bottom">
+              <IconButton
+                aria-owns={more ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                color="inherit"
+                onClick={event =>
+                  this.setState({ school: event.currentTarget })
+                }
+              >
+                <i className="material-icons">school</i>
+              </IconButton>
+            </Tooltip>
+            {/* Оюутан */}
+            <Tooltip title="Оюутан" placement="bottom">
+              <IconButton
+                aria-owns={more ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                color="inherit"
+                onClick={event => this.setState({ group: event.currentTarget })}
+              >
+                <i className="material-icons">group</i>
+              </IconButton>
+            </Tooltip>
+            {/* Эрдэм шинжилгээ */}
+            <Tooltip title="Эрдэм шинжилгээ" placement="bottom">
+              <IconButton
+                aria-owns={more ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                color="inherit"
+                onClick={event =>
+                  this.setState({ local_library: event.currentTarget })
+                }
+              >
+                <i className="material-icons">local_library</i>
+              </IconButton>
+            </Tooltip>
+            {/* MORE */}
+            <Tooltip title="Бусад" placement="bottom">
+              <IconButton
+                aria-owns={more ? "simple-menu" : undefined}
+                aria-haspopup="true"
+                color="inherit"
+                onClick={event => this.setState({ more: event.currentTarget })}
+              >
+                <i className="material-icons">more_vert</i>
+              </IconButton>
+            </Tooltip>
+            {/* MENU */}
+            <Menu
+              anchorEl={info}
+              open={Boolean(info)}
+              onClose={this.handleClose}
+            >
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>{" "}
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>{" "}
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>{" "}
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>{" "}
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>{" "}
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() => (window.location.href = "")}
+              >
+                {" "}
+              </MenuItem>
+            </Menu>
 
-function Navbar(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar className="dev-nav">
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <span className={classes.grow}>Програм Хангамж</span>
-          {/* Танилцуулга */}
-          <Tooltip title="Танилцуулга" placement="bottom">
-            <IconButton
-              className={classes.button}
-              aria-label="Delete"
-              color="inherit"
+            <Menu
+              anchorEl={domain}
+              open={Boolean(domain)}
+              onClose={this.handleClose}
             >
-              <i className="material-icons">info</i>
-            </IconButton>
-          </Tooltip>
-          {/* Салбар */}
-          <Tooltip title="Салбар" placement="bottom">
-            <IconButton
-              className={classes.button}
-              aria-label="Delete"
-              color="inherit"
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=20")
+                }
+              >
+                Технологийн салбар
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=33")
+                }
+              >
+                Инженерчлэлийн салбар
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=6488")
+                }
+              >
+                Эрчим хүч мэдээллийн технологийн салбар
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=22")
+                }
+              >
+                Суурь шинжлэх ухааны тэнхим
+              </MenuItem>{" "}
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=1719")
+                }
+              >
+                Лицей сургууль
+              </MenuItem>
+            </Menu>
+            <Menu
+              anchorEl={school}
+              open={Boolean(school)}
+              onClose={this.handleClose}
             >
-              <i className="material-icons">domain</i>
-            </IconButton>
-          </Tooltip>
-          {/* Сургалт */}
-          <Tooltip title="Сургалт" placement="bottom">
-            <IconButton
-              className={classes.button}
-              aria-label="Delete"
-              color="inherit"
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=35")
+                }
+              >
+                Сургалтын алба, номын сан
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=39")
+                }
+              >
+                СУРГАЛТ ЯВУУЛЖ БУЙ МЭРГЭЖЛҮҮД
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=236")
+                }
+              >
+                СУРГАЛТЫН ТӨЛБӨР ТООЦОО, ТӨЛӨХ АРГАЧИЛАЛ
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=234")
+                }
+              >
+                Сургалтын тэтгэлэг зээл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=2516")
+                }
+              >
+                Дээд боловсролын шинэчлэл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=7637")
+                }
+              >
+                Чанарын удирдлагын тогтолцоо
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=6340")
+                }
+              >
+                Нээлттэй хичээл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=41")
+                }
+              >
+                Төгсөлт
+              </MenuItem>
+            </Menu>
+
+            <Menu
+              anchorEl={group}
+              open={Boolean(group)}
+              onClose={this.handleClose}
             >
-              <i className="material-icons">school</i>
-            </IconButton>
-          </Tooltip>
-          {/* Элсэлт */}
-          <Tooltip title="Элсэлт" placement="bottom">
-            <IconButton
-              className={classes.button}
-              aria-label="Delete"
-              color="inherit"
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=1261")
+                }
+              >
+                Оюутны байр
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=55")
+                }
+              >
+                Оюутны зөвлөл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=59")
+                }
+              >
+                Оюутны клубууд
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=65")
+                }
+              >
+                Төгсөгчдийн холбоо
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=57")
+                }
+              >
+                Дүрэм журам
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=63")
+                }
+              >
+                Онц төгсөгчид
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=61")
+                }
+              >
+                Зургийн цомог
+              </MenuItem>
+            </Menu>
+            <Menu
+              anchorEl={local_library}
+              open={Boolean(local_library)}
+              onClose={this.handleClose}
             >
-              <i className="material-icons">group_add</i>
-            </IconButton>
-          </Tooltip>
-          {/* Сургалт */}
-          <Tooltip title="Сургалт" placement="bottom">
-            <IconButton
-              className={classes.button}
-              aria-label="Delete"
-              color="inherit"
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=67")
+                }
+              >
+                Эрдмийн зөвлөл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=69")
+                }
+              >
+                Манай эрдэмтэд
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=71")
+                }
+              >
+                Ном сурах бичиг, арга зүйн зөвлөл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=73")
+                }
+              >
+                Судалгааны төвүүд
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=75")
+                }
+              >
+                ЭШХ эмхэтгэл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=1424")
+                }
+              >
+                Профессорын семинар
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=77")
+                }
+              >
+                Магистрын төгсөлтийн ажил
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=79")
+                }
+              >
+                ЭШСА-ын чиглэл
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=4755")
+                }
+              >
+                ЭШӨ бичих заавар
+              </MenuItem>
+            </Menu>
+            <Menu
+              anchorEl={more}
+              open={Boolean(more)}
+              onClose={this.handleClose}
             >
-              <i className="material-icons">school</i>
-            </IconButton>
-          </Tooltip>
-          {/* Сургалт */}
-          <Tooltip title="Сургалт" placement="bottom">
-            <IconButton
-              className={classes.button}
-              aria-label="Delete"
-              color="inherit"
-            >
-              <i className="material-icons">school</i>
-            </IconButton>
-          </Tooltip>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=81")
+                }
+              >
+                Хамтын ажиллагаа
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=37")
+                }
+              >
+                Элсэлт
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href = "http://stda.edu.mn/stda/?page_id=86")
+                }
+              >
+                Шилэн данс
+              </MenuItem>
+              <MenuItem
+                className={classes.moreLink}
+                onClick={() =>
+                  (window.location.href =
+                    "http://stda.edu.mn/stda/?page_id=110")
+                }
+              >
+                Холбоо барих
+              </MenuItem>
+            </Menu>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 Navbar.propTypes = {
