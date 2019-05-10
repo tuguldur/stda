@@ -220,6 +220,7 @@ class Navbar extends React.Component {
               anchorEl={info}
               open={Boolean(info)}
               onClose={this.handleClose}
+              disableAutoFocusItem={true}
             >
               <MenuItem
                 className={classes.moreLink}
@@ -279,10 +280,12 @@ class Navbar extends React.Component {
                 Санхүү үйлчилгээний алба
               </MenuItem>
             </Menu>
+
             <Menu
               anchorEl={domain}
               open={Boolean(domain)}
               onClose={this.handleClose}
+              disableAutoFocusItem={true}
             >
               <MenuItem
                 className={classes.moreLink}
@@ -327,10 +330,12 @@ class Navbar extends React.Component {
                 Лицей сургууль
               </MenuItem>
             </Menu>
+
             <Menu
               anchorEl={school}
               open={Boolean(school)}
               onClose={this.handleClose}
+              disableAutoFocusItem={true}
             >
               <MenuItem
                 className={classes.moreLink}
@@ -406,6 +411,7 @@ class Navbar extends React.Component {
               anchorEl={group}
               open={Boolean(group)}
               onClose={this.handleClose}
+              disableAutoFocusItem={true}
             >
               <MenuItem
                 className={classes.moreLink}
@@ -469,6 +475,7 @@ class Navbar extends React.Component {
               anchorEl={local_library}
               open={Boolean(local_library)}
               onClose={this.handleClose}
+              disableAutoFocusItem={true}
             >
               <MenuItem
                 className={classes.moreLink}
@@ -549,6 +556,7 @@ class Navbar extends React.Component {
               anchorEl={more}
               open={Boolean(more)}
               onClose={this.handleClose}
+              disableAutoFocusItem={true}
             >
               <MenuItem
                 className={classes.moreLink}
