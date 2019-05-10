@@ -1,0 +1,17 @@
+.section {
+  background: #fff;
+  padding-bottom: 48px;
+  padding-top: 96px;
+  position: relative;
+}
+.section--dark {
+  background-color: #202124;
+  color: #fafafa;
+}
+.container {
+  margin: 0 auto;
+  max-width: 392px;
+  overflow: hidden;
+  padding: 0 16px;
+  width: 100%;
+}
