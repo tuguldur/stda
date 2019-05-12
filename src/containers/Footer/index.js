@@ -90,6 +90,12 @@ class Footer extends Component {
                     Номын сангийн веб
                   </a>
                 </li>
+                <li className="footer-block__legal-nav-item">
+                  <p>
+                    &copy; {new Date().getFullYear()} ШУТИС-ийн Дархан-Уул аймаг
+                    дахь Технологийн сургууль
+                  </p>
+                </li>
               </ul>
             </div>
           </div>

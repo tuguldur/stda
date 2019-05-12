@@ -20,3 +20,6 @@ a {
   color: #202124;
   text-decoration: none;
 }
+p {
+  margin: 0;
+}

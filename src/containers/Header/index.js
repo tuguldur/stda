@@ -11,7 +11,7 @@ class Header extends Component {
       <section className="section section--dark hero hero--centered">
         <div className="container container--hero anim-appear">
           <div className="column">
-            <h1>Your Dream Starts with us</h1>
+            <h1>Your Dream Starts With Us</h1>
             <p>
               Монгол улсад Мэдээллийн технологийн салбар үүсэн хөгжиж эхэлсэн
               үеэс хойд бүс нутгийн хөгжилд нэмэр болохын тулд Дархан-Уул
@@ -20,7 +20,7 @@ class Header extends Component {
               билээ.
             </p>
             <div className="btn-hero">
-              <Button variant="outlined">More</Button>
+              <Button variant="outlined">Дэлгэрэнгүйг үзэх</Button>
             </div>
           </div>
         </div>

@@ -22,5 +22,9 @@
   margin-bottom: 1rem;
 }
 .btn-hero button {
+  margin-top: 10px;
   color: inherit;
+}
+span {
+  font-family: Arial;
 }
