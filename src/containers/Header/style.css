@@ -28,3 +28,8 @@
 span {
   font-family: Arial;
 }
+@media screen and (max-width: 374px) {
+  .btn-hero button {
+    margin-block-end: 12%;
+  }
+}

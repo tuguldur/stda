@@ -69,18 +69,19 @@
   .footer-block__legal-nav-item {
     display: inline-block;
   }
-  .footer-block__legal-nav-item:not(:first-child) {
+  .footer-block__legal-nav-item:not(:first-child):not(:last-child) {
     margin-left: 16px;
   }
   .footer-block--legal .footer-block__content {
     -ms-flex-negative: 1;
     flex-shrink: 1;
   }
+}
+@media screen and (min-width: 999px) {
   .footer-block__legal-nav-item:last-child {
-    float: right !important;
+    float: right;
   }
 }
-
 .footer-block--legal .footer-block__content {
   -ms-flex: 1 0 100%;
   flex: 1 0 100%;
