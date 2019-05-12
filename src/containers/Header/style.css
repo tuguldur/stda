@@ -6,12 +6,21 @@
 .hero.hero--centered .container--hero {
   min-height: 15.625rem;
 }
-.container--hero {
-  max-width: 1500px;
-}
+
 .hero.hero--centered .column {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+.hero.hero--centered h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.hero.hero--centered p {
+  color: #bdc1c6;
+  margin-bottom: 1rem;
+}
+.btn-hero button {
+  color: inherit;
 }
