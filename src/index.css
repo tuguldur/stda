@@ -4,7 +4,17 @@ body {
   padding: 0;
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
+  color: #5f6368;
+}
+body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 521px) {
+  body {
+    font-size: 16px;
+  }
 }
 * {
   background-repeat: no-repeat;
@@ -21,5 +31,73 @@ a {
   text-decoration: none;
 }
 p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #202124;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+.eyebrow {
+  color: #5f6368;
+  display: block;
+  line-height: 20px;
+  margin: 24px 0 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "Roboto Mono", monospace;
+}
+
+.col-list .col-1,
+.col-list .col-2,
+.col-list .col-3 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.col-list .col-1,
+.col-list .col-2,
+.col-list .col-3,
+.multi-up {
+  margin: 0 -20px;
+}
+.col-list .col-1:last-child,
+.col-list .col-2:last-child,
+.col-list .col-3:last-child {
+  margin-bottom: 48px;
+}
+
+h2 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+@media screen and (max-width: 920px) and (min-width: 521px) {
+  h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 921px) {
+  h2 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0 0 16px;
+}
+figure {
+  display: block;
   margin: 0;
 }

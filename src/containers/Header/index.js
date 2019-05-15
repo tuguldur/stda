@@ -11,7 +11,7 @@ class Header extends Component {
       <section className="section section--dark hero hero--centered">
         <div className="container container--hero anim-appear">
           <div className="column">
-            <h1>Your Dream Starts With Us</h1>
+            <h1>Your Story Starts With Us.</h1>
             <p>
               Монгол улсад Мэдээллийн технологийн салбар үүсэн хөгжиж эхэлсэн
               үеэс хойд бүс нутгийн хөгжилд нэмэр болохын тулд Дархан-Уул
