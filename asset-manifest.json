@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stda/static/css/main.4ee9e5fb.chunk.css",
-    "main.js": "/stda/static/js/main.2765906a.chunk.js",
-    "main.js.map": "/stda/static/js/main.2765906a.chunk.js.map",
+    "main.js": "/stda/static/js/main.a615ec8c.chunk.js",
+    "main.js.map": "/stda/static/js/main.a615ec8c.chunk.js.map",
     "runtime~main.js": "/stda/static/js/runtime~main.09041973.js",
     "runtime~main.js.map": "/stda/static/js/runtime~main.09041973.js.map",
     "static/js/2.0564efe4.chunk.js": "/stda/static/js/2.0564efe4.chunk.js",
     "static/js/2.0564efe4.chunk.js.map": "/stda/static/js/2.0564efe4.chunk.js.map",
     "index.html": "/stda/index.html",
-    "precache-manifest.e0b2b269cec65a35bd3e04cc31dbdb4e.js": "/stda/precache-manifest.e0b2b269cec65a35bd3e04cc31dbdb4e.js",
+    "precache-manifest.79e6a1ec5164ff2506b1a4f5b9c4c202.js": "/stda/precache-manifest.79e6a1ec5164ff2506b1a4f5b9c4c202.js",
     "service-worker.js": "/stda/service-worker.js",
     "static/css/main.4ee9e5fb.chunk.css.map": "/stda/static/css/main.4ee9e5fb.chunk.css.map",
     "static/media/must-logo.png": "/stda/static/media/must-logo.3e8718ad.png"
