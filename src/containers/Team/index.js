@@ -18,7 +18,55 @@ class Team extends Component {
                 </div>
               </section>
             </div>
-            <div className="multi-up multi-up--3 multi-up--slim">
+            <div className="multi-up multi-up--3 multi-up--slim teacher-tile">
+              <div className="tile">
+                <a href="#" className="tile__link">
+                  <figure class="tile__poster">
+                    <div>
+                      <img
+                        class="tile__image"
+                        src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1VKBitGP7fOOJO21ggWRhMp1QR81nhqff%2Fdarktheme-2x1.png"
+                      />
+                    </div>
+                  </figure>
+                  <h3 className="eyebrow">Магистр</h3>
+                  <h4>
+                    <span class="tile__link">Овог Нэр</span>
+                  </h4>
+                </a>
+              </div>
+              <div className="tile">
+                <a href="#" className="tile__link">
+                  <figure class="tile__poster">
+                    <div>
+                      <img
+                        class="tile__image"
+                        src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1VKBitGP7fOOJO21ggWRhMp1QR81nhqff%2Fdarktheme-2x1.png"
+                      />
+                    </div>
+                  </figure>
+                  <h3 className="eyebrow">Магистр</h3>
+                  <h4>
+                    <span class="tile__link">Овог Нэр</span>
+                  </h4>
+                </a>
+              </div>
+              <div className="tile">
+                <a href="#" className="tile__link">
+                  <figure class="tile__poster">
+                    <div>
+                      <img
+                        class="tile__image"
+                        src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1VKBitGP7fOOJO21ggWRhMp1QR81nhqff%2Fdarktheme-2x1.png"
+                      />
+                    </div>
+                  </figure>
+                  <h3 className="eyebrow">Магистр</h3>
+                  <h4>
+                    <span class="tile__link">Овог Нэр</span>
+                  </h4>
+                </a>
+              </div>
               <div className="tile">
                 <a href="#" className="tile__link">
                   <figure class="tile__poster">
